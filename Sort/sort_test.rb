@@ -19,12 +19,12 @@ class SortTest < Minitest::Test
 	end
 
 	def test_bubble
-		arr = [5,1,3,2,4]
-		copy = arr.deep_copy
+		array = Array.generate(10)
+		copy = array.deep_copy
 
-		Sort.bubble(arr)
+		Sort.bubble(array)
 		copy.sort!
 
-		assert_equal(arr,copy)
+		assert_equal(array,copy)
 	end
 end
