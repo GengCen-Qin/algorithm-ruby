@@ -25,6 +25,16 @@ class SortTest < Minitest::Test
 		Sort.bubble(array)
 		copy.sort!
 
-		assert_equal(array,copy)
+		assert_equal(copy,array)
+	end
+
+	def test_select
+		array = Array.generate(10)
+		copy = array.deep_copy
+
+		Sort.select(array)
+		copy.sort!
+
+		assert_equal(copy,array)
 	end
 end
