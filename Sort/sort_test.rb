@@ -19,20 +19,20 @@ class SortTest < Minitest::Test
 	end
 
 	def test_bubble
-		array = Array.generate(10)
-		copy = array.deep_copy
-
-		Sort.bubble(array)
-		copy.sort!
-
-		assert_equal(copy,array)
+		checkSortSuccess(:bubble)	
 	end
 
 	def test_select
+		checkSortSuccess(:select)		
+	end
+
+	private 
+
+	def checkSortSuccess(sortName)
 		array = Array.generate(10)
 		copy = array.deep_copy
 
-		Sort.select(array)
+		Sort.send(sortName,array)
 		copy.sort!
 
 		assert_equal(copy,array)

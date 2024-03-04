@@ -20,7 +20,7 @@ class Sort
 		bound.downto(0) do |down|
 			maxIndex = 0
 			0.upto(down) do |up|
-					maxIndex = up if array[up] > array[maxIndex]
+				maxIndex = up if array[up] > array[maxIndex]
 			end
 			array[maxIndex],array[down] = array[down],array[maxIndex]
 		end
