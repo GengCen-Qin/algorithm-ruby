@@ -26,6 +26,10 @@ class SortTest < Minitest::Test
 		checkSortSuccess(:select)		
 	end
 
+	def test_insert
+		checkSortSuccess(:insert)
+	end
+
 	private 
 
 	def checkSortSuccess(sortName)
