@@ -30,15 +30,21 @@ class SortTest < Minitest::Test
 		checkSortSuccess(:insert)
 	end
 
+	def test_merge
+		checkSortSuccess(:merge)
+	end
+
 	private 
 
 	def checkSortSuccess(sortName)
-		array = Array.generate(10)
-		copy = array.deep_copy
+		100.times do
+			array = Array.generate(100)
+			copy = array.deep_copy
 
-		Sort.send(sortName,array)
-		copy.sort!
+			Sort.send(sortName,array)
+			copy.sort!
 
-		assert_equal(copy,array)
+			assert_equal(copy,array)
+		end
 	end
 end
