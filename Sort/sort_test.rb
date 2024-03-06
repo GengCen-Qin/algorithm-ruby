@@ -38,6 +38,10 @@ class SortTest < Minitest::Test
 		checkSortSuccess :heap
 	end
 
+	def test_fast
+		checkSortSuccess :fast
+	end
+
 	private 
 
 	def checkSortSuccess(sortName)

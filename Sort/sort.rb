@@ -85,6 +85,39 @@ class Sort
 		heapObj.sort
 	end
 
+	def self.fast(array)
+		doFast(array,0,array.size - 1)
+	end
+
+	def self.doFast(array,left,right)
+		# 快速排序是参考一个值，让整个数组变成 < = > 三个区，和荷兰国旗算法的思想一致
+	    return if left >= right
+
+	    # 我们以最右点的值来进行判定
+	    l = left - 1
+	    r = right 
+	    target = array[right]
+	    index = left
+
+	    while l < r and index < r
+	    	if array[index] > target
+	    		swap(array,index,r - 1)
+	    		r -= 1
+	    	elsif array[index] < target
+	    		swap(array,index,l + 1)
+	    		l += 1
+	    		index += 1
+	    	else
+	    		index += 1
+	    	end
+	    end
+
+	    swap(array,right,r)
+
+	    doFast(array,left,l);
+	    doFast(array,r,right)
+	end
+
 	protected 
 
 	def self.getMid(start,button) 
