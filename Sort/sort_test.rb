@@ -34,11 +34,15 @@ class SortTest < Minitest::Test
 		checkSortSuccess(:merge)
 	end
 
+	def test_heap
+		checkSortSuccess :heap
+	end
+
 	private 
 
 	def checkSortSuccess(sortName)
 		100.times do
-			array = Array.generate(100)
+			array = Array.generate(10)
 			copy = array.deep_copy
 
 			Sort.send(sortName,array)

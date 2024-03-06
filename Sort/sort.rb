@@ -1,3 +1,5 @@
+require_relative '../heap'
+
 class Sort
 	def self.bubble(array)
 		size = array.size
@@ -78,6 +80,10 @@ class Sort
 		end
 	end
 
+	def self.heap(array)
+		heapObj = Heap.new(array)
+		heapObj.sort
+	end
 
 	protected 
 
