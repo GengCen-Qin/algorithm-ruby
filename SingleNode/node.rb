@@ -43,4 +43,22 @@ class Node
 
     head.next
   end
+
+  def self.print_common_part(node1,node2) 
+    map = {}
+    tmp = node1
+    set = Set.new
+    while tmp
+      set.add(tmp)
+      tmp = tmp.next
+    end
+
+    tmp = node2
+    while tmp 
+      break if set.include?(tmp)      
+      tmp = tmp.next
+    end
+
+    tmp
+  end
 end
