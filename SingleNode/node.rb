@@ -76,4 +76,26 @@ class Node
     end
     common
   end
+
+  def self.is_huiwen?(node)
+    tmp = node
+    stack = []
+    while tmp
+      stack << tmp
+      tmp = tmp.next
+    end
+
+    tmp = node
+    isHuiwen = true
+    while tmp
+      pop = stack.pop
+      if tmp.value != pop.value
+        isHuiwen = false
+        break
+      end
+      tmp = tmp.next
+    end
+
+    isHuiwen
+  end
 end

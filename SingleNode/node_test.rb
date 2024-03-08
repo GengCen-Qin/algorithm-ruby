@@ -53,4 +53,14 @@ class NodeTest < Minitest::Test
 
 		assert common == @node3
 	end
+
+	def test_is_huiwen?
+		refute Node.is_huiwen?(@node1)
+
+		@node4.value = 3
+		@node5.value = 2
+		@node6.value = 1
+
+		assert Node.is_huiwen?(@node1)
+	end
 end
