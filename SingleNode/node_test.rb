@@ -22,16 +22,16 @@ class NodeTest < Minitest::Test
 	end
 
 	def test_reverse 
-	    head = Node.reverse(@node1)
+		head = Node.reverse(@node1)
 
-	    assert head == @node6
+		assert head == @node6
 
-	    while head.next 
-	    	head = head.next
-	    end
+		while head.next 
+			head = head.next
+		end
 
-	    assert head == @node1
-	    assert head.next.nil?
+		assert head == @node1
+		assert head.next.nil?
 	end
 
 	def test_print_common_part
@@ -40,6 +40,16 @@ class NodeTest < Minitest::Test
 		otherNode.next = @node3
 
 		common = Node.print_common_part(@node1,otherNode)
+
+		assert common == @node3
+	end
+
+	def test_print_sorted_common_part
+		# 打印两个有序链表的公共部分
+		otherNode = Node.new(-1)
+		otherNode.next = @node3
+
+		common = Node.print_sorted_common_part(@node1,otherNode)
 
 		assert common == @node3
 	end

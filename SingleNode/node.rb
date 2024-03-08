@@ -61,4 +61,19 @@ class Node
 
     tmp
   end
+
+  def self.print_sorted_common_part(node1,node2)
+    common = nil
+    while node1 and node2
+      if node1.value > node2.value
+        node2 = node2.next
+      elsif node1.value < node2.value
+        node1 = node1.next
+      else
+        common = node1
+        break
+      end
+    end
+    common
+  end
 end
