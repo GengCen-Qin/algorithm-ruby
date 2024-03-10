@@ -13,7 +13,7 @@ class Node
     @value
   end
 
-  def print_all()
+  def print_all
     tmp = self
     while tmp
       p @value
@@ -44,7 +44,7 @@ class Node
     head.next
   end
 
-  def self.print_common_part(node1,node2) 
+  def self.print_common_part(node1, node2)
     map = {}
     tmp = node1
     set = Set.new
@@ -54,15 +54,16 @@ class Node
     end
 
     tmp = node2
-    while tmp 
-      break if set.include?(tmp)      
+    while tmp
+      break if set.include?(tmp)
+
       tmp = tmp.next
     end
 
     tmp
   end
 
-  def self.print_sorted_common_part(node1,node2)
+  def self.print_sorted_common_part(node1, node2)
     common = nil
     while node1 and node2
       if node1.value > node2.value
