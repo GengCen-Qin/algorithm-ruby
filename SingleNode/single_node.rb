@@ -1,4 +1,4 @@
-class Node
+class SingleNode
   attr_accessor :value, :next
 
   def initialize(value)
@@ -32,7 +32,7 @@ class Node
       tmp = tmp.next
     end
 
-    head = Node.new(-1)
+    head = SingleNode.new(-1)
     tmp = head
     until stack.empty?
       pop = stack.pop
