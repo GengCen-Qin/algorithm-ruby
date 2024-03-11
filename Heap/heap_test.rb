@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require_relative 'heap'
-class HeapTest < Minitest::Test
+class HeapTest < TLDR
   def test_nothing
     assert true
   end

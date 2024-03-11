@@ -3,7 +3,7 @@ require 'minitest/autorun'
 require_relative 'sort'
 require_relative 'array'
 
-class SortTest < Minitest::Test
+class SortTest < TLDR
   def test_nothing
     assert(true)
   end

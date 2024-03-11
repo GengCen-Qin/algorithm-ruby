@@ -1,6 +1,6 @@
 require 'minitest/autorun'
 require_relative 'node'
-class NodeTest < Minitest::Test
+class NodeTest < TLDR
   def setup
     @node1 = Node.new(1)
     @node2 = Node.new(2)
