@@ -20,7 +20,26 @@ class TreeNode
   end
 
   # 中序遍历
-  def self.mid_print(node); end
+  def self.mid_print(node)
+    stack = []
+    tmp = node
+    while tmp
+      stack << tmp
+      tmp = tmp.left
+    end
+
+    until stack.empty?
+      pop = stack.pop
+      print "#{pop.value} "
+
+      right = pop.right
+
+      while right
+        stack << right
+        right = right.left
+      end
+    end
+  end
 
   # 后序遍历
   def self.aft_print(node)
@@ -37,6 +56,6 @@ class TreeNode
       stack_in << pop.right if pop.right
     end
 
-    p "#{stack_out.pop.value} " until stack_out.empty
+    print "#{stack_out.pop.value} " until stack_out.empty?
   end
 end
