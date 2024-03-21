@@ -58,4 +58,17 @@ class TreeNode
 
     print "#{stack_out.pop.value} " until stack_out.empty?
   end
+
+  def self.width_print(node)
+    queue = []
+    queue << node
+
+    until queue.empty?
+      tmp = queue.shift
+      print "#{tmp.value} "
+
+      queue << tmp.left if tmp.left
+      queue << tmp.right if tmp.right
+    end
+  end
 end
