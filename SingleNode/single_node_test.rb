@@ -1,4 +1,3 @@
-require 'minitest/autorun'
 require_relative 'single_node'
 class SingleNodeTest < TLDR
   def setup

@@ -1,5 +1,3 @@
-require 'minitest/autorun'
-
 require_relative 'sort'
 require_relative 'array'
 

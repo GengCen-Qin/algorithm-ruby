@@ -1,8 +1,7 @@
-require 'minitest/autorun'
 require_relative 'tree_node'
 
 class TreeNodeTest < TLDR
-  def setup 
+  def setup
     @node1 = TreeNode.new(1)
     node2 = TreeNode.new(2)
     node3 = TreeNode.new(3)

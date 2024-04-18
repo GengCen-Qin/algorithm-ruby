@@ -1,4 +1,3 @@
-require 'minitest/autorun'
 require_relative 'heap'
 class HeapTest < TLDR
   def test_nothing
