@@ -44,6 +44,24 @@ class SingleNode
     head.next
   end
 
+  # 反转单链表
+  # @param {SingleNode} node
+  # @return {SingleNode}
+  def self.reverse_v2(node)
+    # 使用双指针来控制
+    slow = node
+    fast = node.next
+
+    while fast
+      head = fast.next
+      fast.next = slow
+      slow = fast
+      fast = head
+    end
+
+    slow
+  end
+
   def self.print_common_part(node1, node2)
     map = {}
     tmp = node1

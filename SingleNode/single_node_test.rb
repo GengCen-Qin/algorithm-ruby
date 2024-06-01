@@ -30,6 +30,17 @@ class SingleNodeTest < TLDR
     assert head.next.nil?
   end
 
+  def test_reverse_v2
+    head = SingleNode.reverse_v2(@node1)
+
+    assert head == @node6
+
+    head = head.next while head.next
+
+    assert head == @node1
+    assert head.next.nil?
+  end
+
   def test_print_common_part
     # 打印公共部分
     otherNode = SingleNode.new(-1)
