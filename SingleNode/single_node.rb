@@ -49,6 +49,7 @@ class SingleNode
   # @return {SingleNode}
   def self.reverse_v2(node)
     # 使用双指针来控制
+    old_first = node
     slow = node
     fast = node.next
 
@@ -58,6 +59,7 @@ class SingleNode
       slow = fast
       fast = head
     end
+    old_first.next = nil
 
     slow
   end
