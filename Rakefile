@@ -1,7 +1,5 @@
-task default: %w[test]
+require 'tldr/rake'
 
-task :test do
-  Dir.glob('**/*_test.rb').each do |test_file|
-    sh "tldr #{test_file}"
-  end
-end
+TLDR::Task.new(name: :safe_tests, config: TLDR::Config.new(
+  paths: FileList["./**/*_test.rb"],
+))

@@ -16,3 +16,5 @@ end
 ```
 
 执行测试需要你下载对应的gem: `gem install tldr`
+
+执行测试使用：`rake safe_tests`
