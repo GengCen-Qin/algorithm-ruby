@@ -54,7 +54,7 @@ class Heap
     end
   end
 
-  def initialize(array=[])
+  def initialize(array = [])
     self.array = array
     self.heapSize = array.size
   end
