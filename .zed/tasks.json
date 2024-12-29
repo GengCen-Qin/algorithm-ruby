@@ -2,13 +2,19 @@
 //
 // Example:
 [
+  // {
+  //   "label": "test",
+  //   "command": "rake safe_tests",
+  //   "use_new_terminal": false,
+  //   "allow_concurrent_runs": false,
+  //   "reveal": "always",
+  //   "hide": "never",
+  //   "shell": "system"
+  // }
   {
-    "label": "test",
-    "command": "rake safe_tests",
-    "use_new_terminal": false,
-    "allow_concurrent_runs": false,
-    "reveal": "always",
-    "hide": "never",
-    "shell": "system"
+    "label": "test $ZED_RELATIVE_FILE:$ZED_ROW",
+    "command": "bundle exec tldr",
+    "args": ["\"$ZED_RELATIVE_FILE:$ZED_ROW\""],
+    "tags": ["ruby-test"]
   }
 ]
