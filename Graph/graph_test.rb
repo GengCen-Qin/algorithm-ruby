@@ -1,10 +1,18 @@
-require_relative 'graph_node'
-class GraphNodeTest < TLDR
-  def test_noting
-    assert GraphNode.new
-  end
+# frozen_string_literal: true
 
-  def test_one
-    assert GraphNode.new
+require_relative 'bfs'
+
+class GraphTest < TLDR
+  def test_bfs_search()
+    graph_hash = {
+      a: [:b, :c],
+      b: [:c, :d],
+      d: [:f]
+    }
+
+    start = :a
+    last = :f
+
+    assert bfs_search(graph_hash, start, last)
   end
 end
