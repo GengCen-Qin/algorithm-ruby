@@ -42,4 +42,32 @@ class GraphTest < TLDR
 
     assert_equal graph.djs_min_weigth(graph.get_node(:a), graph.get_node(:d)), 6
   end
+
+  def test_djs_min_weigth
+    node_hash = {
+      a: [
+        { b: 5 },
+        { c: 9 }
+      ],
+      b: [
+        { d: 15 },
+        { e: 20 },
+      ],
+      c: [
+        { e: 35 },
+        { d: 20 }
+      ],
+      d: [
+        { f: 20 }
+      ],
+      e: [
+        { f: 10 }
+      ],
+      f: [
+      ]
+    }
+
+    graph = Graph.parse(node_hash)
+    assert_equal graph.djs_min_weigth(graph.get_node(:a), graph.get_node(:f)), 35
+  end
 end
