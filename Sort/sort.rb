@@ -81,8 +81,9 @@ class Sort
     heapObj.sort
   end
 
+  # @param array [Array] Description.
   def self.fast(array)
-    doFast(array, 0, array.size - 1)
+    doQuick(array, 0, array.size - 1)
   end
 
   def self.doFast(array, left, right)
@@ -112,6 +113,28 @@ class Sort
 
     doFast(array, left, l)
     doFast(array, r, right)
+  end
+
+  def self.doQuick(array, left, right)
+    return if left >= right
+
+    # 待比较的值
+    pivot = array[getMid(left, right)]
+    # 遍历下标
+    left_index, right_index = left, right
+
+    while left_index < right_index
+      left_index += 1 while array[left_index] < pivot
+      right_index -= 1 while array[right_index] > pivot
+      break if left_index > right_index
+
+      swap(array, left_index, right_index)
+      left_index += 1
+      right_index -= 1
+    end
+
+    doQuick(array, left, right_index)
+    doQuick(array, left_index, right)
   end
 
   def self.getMid(start, button)
