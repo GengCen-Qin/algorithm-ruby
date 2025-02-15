@@ -17,37 +17,41 @@ class SortTest < TLDR
   end
 
   def test_bubble
-    checkSortSuccess(:bubble)
+    check_sort_success(:bubble)
   end
 
   def test_select
-    checkSortSuccess(:select)
+    check_sort_success(:select)
   end
 
   def test_insert
-    checkSortSuccess(:insert)
+    check_sort_success(:insert)
   end
 
   def test_merge
-    checkSortSuccess(:merge)
+    check_sort_success(:merge)
   end
 
   def test_heap
-    checkSortSuccess :heap
+    check_sort_success :heap
   end
 
   def test_fast
-    checkSortSuccess :fast
+    check_sort_success :fast
+  end
+
+  def test_bucket
+    check_sort_success :bucket
   end
 
   private
 
-  def checkSortSuccess(sortName)
+  def check_sort_success(sort_name)
     100.times do
       array = Array.generate(10)
       copy = array.deep_copy
 
-      Sort.send(sortName, array)
+      Sort.send(sort_name, array)
       copy.sort!
 
       assert_equal(copy, array)

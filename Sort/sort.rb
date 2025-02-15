@@ -121,4 +121,21 @@ class Sort
   def self.swap(array, x, y)
     array[x], array[y] = array[y], array[x]
   end
+
+  # 桶排序
+  def self.bucket(array)
+    # 1. 找到最大值
+    min = array.min
+    # 2. 使用数组表示桶，下标表示桶的编号，值表示桶的个数
+    tmp_bucket = []
+    # 3. 遍历数组中每个元素，将放到下标对应的桶中
+    array.each { |value| tmp_bucket[value - min] ||= 0 and tmp_bucket[value - min] += 1 }
+    # 4. 将桶中的数据倒出来
+    array.clear
+    tmp_bucket.each_with_index do |value, index|
+      next unless value
+
+      value.times { array << (index + min) }
+    end
+  end
 end
